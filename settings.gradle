@@ -1,0 +1,5 @@
+rootProject.name = 'tool'
+include 'lucence'
+include 'lucene'
+include 'webmagic'
+
