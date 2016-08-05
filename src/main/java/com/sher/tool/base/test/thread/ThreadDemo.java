@@ -5,7 +5,7 @@ package com.sher.tool.base.test.thread;
  */
 public class ThreadDemo {
 
-
+    private static int num =1;
 
     static class ThreadA implements Runnable{
 
@@ -76,11 +76,9 @@ public class ThreadDemo {
 
         String name;
         Object lock;
-        int num;
 
         ThreadC(String name,int num,Object lock){
             this.name = name;
-            this.num = num;
             this.lock = lock;
         }
 
@@ -88,15 +86,15 @@ public class ThreadDemo {
         public void run() {
             while(true){
                 synchronized (lock){
-                    if(num>0){
-                        System.out.println(name);
-                        num--;
+                    while(num==0){
                         try {
                             lock.wait();
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
                     }
+                    num--;
+                    System.out.println(name+"===="+num);
                     lock.notify();
                 }
             }
@@ -107,7 +105,6 @@ public class ThreadDemo {
 
         String name;
         Object lock;
-        int num;
 
         ThreadD(String name,int num,Object lock){
             this.name = name;
@@ -118,17 +115,17 @@ public class ThreadDemo {
         public void run() {
             while(true){
                 synchronized (lock){
-                    if(num == 0){
-                        num++;
+                    while(num > 0){
                         try {
                             lock.wait();
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
                     }
-                    System.out.println(name);
+                    num++;
+                    System.out.println(name+"==="+num);
                     lock.notify();
-                    System.out.println("threadD is running");
+//                    System.out.println("threadD is running");
                 }
             }
         }
@@ -141,9 +138,10 @@ public class ThreadDemo {
         Thread threadB = new Thread(new ThreadB("b",self,pre));
 //        threadA.start();
 //        threadB.start();
-        Thread threadC = new Thread(new ThreadC("a",1,pre));
+        int num = 1;
+        Thread threadC = new Thread(new ThreadC("a",num,pre));
         threadC.start();
-        threadC.sleep(1000);
-        new Thread(new ThreadD("b",1,pre)).start();
+//        threadC.sleep(1000);
+        new Thread(new ThreadD("b",num,pre)).start();
     }
 }
