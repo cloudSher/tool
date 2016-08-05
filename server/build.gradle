@@ -1,0 +1,18 @@
+group 'com.sher.server'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'groovy'
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.3.11',
+            'org.mortbay.jetty:jetty:6.1.26',
+            'javax.servlet:javax.servlet-api:3.0.1'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
