@@ -1,8 +1,11 @@
 package com.sher.tool.model;
 
+import com.sher.tool.base.test.annotation.Serialize;
+
 /**
  * Created by Administrator on 2016/8/16.
  */
+@Serialize(values = "user")
 public class User {
 
     private String id;
