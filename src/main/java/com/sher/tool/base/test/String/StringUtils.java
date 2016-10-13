@@ -1,7 +1,10 @@
 package com.sher.tool.base.test.String;
 
+import com.sher.tool.base.test.System.SystemUtil;
+
 import java.io.*;
 import java.net.Socket;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * Created by cloudsher on 2016/6/1.
@@ -15,6 +18,11 @@ public class StringUtils {
     }
 
 
+    /**
+     * test stram
+     * @return
+     * @throws IOException
+     */
     public static String getResult() throws IOException {
         PrintWriter writer = new PrintWriter("f://bb.json");
 
@@ -31,12 +39,33 @@ public class StringUtils {
         return new String(out.toByteArray(),"utf-8");
     }
 
-    public static void main(String args[]) throws IOException {
-        System.out.println(getResult());
 
-        Socket socket = new Socket();
-        OutputStream outputStream = socket.getOutputStream();
-//        outputStream.
+    /**
+     * test class name
+     *
+     * @return  com.sher.tool.base.test.String.StringUtils
+     */
+    public static String classNameTest(){
+        return StringUtils.class.getName();
+    }
+
+    public static void main(String args[]) throws IOException {
+//        SystemUtil.println(classNameTest());
+        testCompareAndSet();
+    }
+
+    /**
+     * test compareAndSet(long ext,long update)
+     *
+     *  ext内部原有值等于期望值，更新ext内部值
+     */
+    public static void testCompareAndSet(){
+        long now = System.currentTimeMillis();
+        AtomicLong ext = new AtomicLong(Long.MIN_VALUE);
+        long nw = ext.get();
+        if(ext.compareAndSet(nw, now)){
+            System.out.println("now :"+now + ",new :"+ nw+",atomiclong :"+ ext.get());
+        }
     }
 
 }
