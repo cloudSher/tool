@@ -16,6 +16,8 @@ dependencies {
             'org.codehaus.groovy:groovy-all:2.4.7',
             'org.springframework:spring-context:4.3.2.RELEASE',
             'org.apache.thrift:libthrift:0.9.3',
-            'mysql:mysql-connector-java:5.1.24'
+            'mysql:mysql-connector-java:5.1.24',
+            'org.apache.zookeeper:zookeeper:3.4.5',
+            'io-netty:netty-all:4.0.13.Final'
 
 }

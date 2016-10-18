@@ -26,7 +26,7 @@ public class FileNIO implements FileIOInterface{
                 ByteBuffer buf = ByteBuffer.allocate(47);
                 while((len = channel.read(buf)) != -1){
                     System.out.println("buf sequence is :" + len);
-                    buf.flip();             //切换read到write
+                    buf.flip();             //
                     while (buf.hasRemaining()){
                         System.out.println("byte is :"+ (char)buf.get());
                     }
@@ -47,7 +47,7 @@ public class FileNIO implements FileIOInterface{
     public static void write(String fromPath,String toPath){
         try {
             if(!new File(fromPath).exists()){
-                throw new FileNotFoundException("文件不存在");
+                throw new FileNotFoundException("from path must not null");
             }
 
             RandomAccessFile fromFile = new RandomAccessFile(fromPath,"rw");
@@ -97,7 +97,7 @@ public class FileNIO implements FileIOInterface{
             InputStream inputStream = domain.openConnection().getInputStream();
 
             RandomAccessFile out = new RandomAccessFile(dest,"rw");
-            ByteBuffer buffer =ByteBuffer.allocate(1024);
+            ByteBuffer buffer = ByteBuffer.allocate(1024);
             FileChannel channel = out.getChannel();
             byte[] buff = new byte[1024];
             int len = 0;
