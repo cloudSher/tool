@@ -10,4 +10,14 @@ public class SystemUtil {
     }
 
 
+    public static void getProperties(){
+        println(System.getProperty("user.dir"));
+    }
+
+
+    public static void main(String args[]){
+        getProperties();
+    }
+
+
 }

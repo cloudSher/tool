@@ -24,6 +24,10 @@ public class Serializtion {
         return out.toByteArray();
     }
 
+    public static String unSerialzation(byte[] bytes) throws UnsupportedEncodingException {
+        return new String(bytes, System.getProperty("file.encoding"));
+    }
+
     public static void phySerialization(Object obj,String path){
         if(obj == null)
             return ;
