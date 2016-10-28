@@ -1,4 +1,4 @@
-package com.sher.tool.base.test.String;
+package com.sher.tool.base.test.basicType;
 
 import com.sher.tool.base.test.System.SystemUtil;
 

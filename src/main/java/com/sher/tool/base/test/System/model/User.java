@@ -9,7 +9,7 @@ public class User {
     private int age;
     private boolean isCreate;
 
-//    public User(String name, int age) {
+//    public User(basicType name, int age) {
 //        this.name = name;
 //        this.age = age;
 //    }

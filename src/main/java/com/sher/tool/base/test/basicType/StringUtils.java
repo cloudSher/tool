@@ -1,9 +1,6 @@
-package com.sher.tool.base.test.String;
-
-import com.sher.tool.base.test.System.SystemUtil;
+package com.sher.tool.base.test.basicType;
 
 import java.io.*;
-import java.net.Socket;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
@@ -43,7 +40,7 @@ public class StringUtils {
     /**
      * test class name
      *
-     * @return  com.sher.tool.base.test.String.StringUtils
+     * @return  com.sher.tool.base.test.basicType.StringUtils
      */
     public static String classNameTest(){
         return StringUtils.class.getName();

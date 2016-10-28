@@ -1,11 +1,8 @@
 package com.sher.tool.base.test.System;
 
-import com.sher.tool.base.test.String.StringUtils;
-import com.sher.tool.base.test.System.model.User;
+import com.sher.tool.base.test.basicType.StringUtils;
 
-import java.io.File;
 import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Type;
 import java.net.MalformedURLException;
@@ -17,7 +14,6 @@ import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
 import static java.lang.System.out;
-import static java.lang.System.setSecurityManager;
 
 /**
  * Created by cloudsher on 2016/6/1.
@@ -66,7 +62,7 @@ public class SystemPropertiesDemo {
 
 
     /**
-     * ²âÊÔ¶àÏß³ÌÇé¿öÏÂ£¬¹¹Ôìº¯ÊýÊÇ·ñ»á³öÏÖ²¢·¢ÎÊÌâ
+     * ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ß³ï¿½ï¿½ï¿½ï¿½ï¿½Â£ï¿½ï¿½ï¿½ï¿½ìº¯ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ö²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      */
     public  void crateObject(){
         List users = new ArrayList(10);
@@ -74,7 +70,7 @@ public class SystemPropertiesDemo {
             int age = i;
             String name = "zh"+i;
             new Thread(()->{
-//                users.add(new User("µ±Ç°Ïß³Ì:" + Thread.currentThread().getName()+ " User µÄÃû³Æ" + name,age));
+//                users.add(new User("ï¿½ï¿½Ç°ï¿½ß³ï¿½:" + Thread.currentThread().getName()+ " User ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" + name,age));
             }).start();
         }
 //        List list = Arrays.asList(new User("11",11),new User("22",22));
@@ -158,7 +154,7 @@ public class SystemPropertiesDemo {
     }
 
     /**
-     * ²âÊÔ¶ÔÏó£¬
+     * ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½
      */
      class User extends SuperUser{
         private String name;
@@ -178,7 +174,7 @@ public class SystemPropertiesDemo {
             }
 
             this.age = age;
-            out.println("======µ±Ç°¶ÔÏóµÄname£º"+name + ",=====age:" + age);
+            out.println("======ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½nameï¿½ï¿½"+name + ",=====age:" + age);
             if(name == null){
                 isCraete = true;
             }else{

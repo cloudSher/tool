@@ -12,9 +12,8 @@ public class BinaryTree {
 
 
     public void createTree(){
-        
-    }
 
+    }
 
 
     class Node{

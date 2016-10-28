@@ -13,9 +13,10 @@ import java.util.jar.Manifest;
 public class FileDemo {
 
     public static void main(String args[]) throws IOException {
-//            listFile("F://");
+            listFile("F://sample");
+        list(new File("f://sample"));
 //        filePath("F:\\alipay-sdk-JAVA-20160417220106\\com\\alipay\\api\\AlipayApiException.java");
-        generateJar("F:/sample");
+//        generateJar("F:/sample");
 //        generateSimpleJar("f:/test.jar");
     }
 
@@ -26,6 +27,11 @@ public class FileDemo {
                 Arrays.asList(file.listFiles()).forEach(System.out::println);
             }
         }
+    }
+
+    public static void list(File file){
+        System.out.println(file.list().length);
+        Arrays.asList(file.list()).forEach(System.out::println);
     }
 
     /***

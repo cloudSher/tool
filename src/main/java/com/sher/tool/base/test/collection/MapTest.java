@@ -16,7 +16,7 @@ public class MapTest {
 
 
      public static void main(String args[]){
-//         Map<String,String> map = new HashMap<>();
+//         Map<basicType,basicType> map = new HashMap<>();
          List<User> list = new ArrayList<>(1);
 //         list.add(null);
 //         map.put("11")

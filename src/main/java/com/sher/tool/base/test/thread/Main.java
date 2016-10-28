@@ -3,7 +3,7 @@ package com.sher.tool.base.test.thread;
 /**
  * Created by cloudsher on 2016/7/14.
  *
- *  匿名类访问方法中的变量问题
+ *
  */
 public class Main {
 

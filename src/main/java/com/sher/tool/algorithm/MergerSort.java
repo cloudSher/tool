@@ -3,6 +3,7 @@ package com.sher.tool.algorithm;
 import java.util.Arrays;
 import java.util.List;
 
+import static java.lang.System.in;
 import static java.lang.System.out;
 
 /**
@@ -12,24 +13,39 @@ public class MergerSort {
 
     public static void main(String args[]){
         int[] arr = {2,4,5,1,3,7};
-        int q = arr.length/2;
-        merger(arr,0,q,arr.length);
+        mergeSort(arr,0,arr.length-1);
         out.println(Arrays.toString(arr));
     }
 
     public static void merger(int[] arr,int p,int q,int r){
-        if(p < r && p>=0){
-            int left = arr[p];
-            int right = arr[q];
-            int g = p;
-            while(p < q && q < r)
-               if(left < right){
-                   arr[g++] = left;
-                   left = arr[++p];
-               }else{
-                   arr[g++] = right;
-                   right = arr[++q];
-               }
+        int[] temp = new int[arr.length];
+        int k = 0;
+        int mid = q+1;
+        int left = p;
+        while(p <= q & mid <= r){
+            if(arr[p] <= arr[mid]){
+                temp[k++] = arr[p++];
+            }else{
+                temp[k++] = arr[mid++];
+            }
+        }
+        while(p <= q){
+            temp[k++] = arr[p++];
+        }
+        while(mid <= r){
+            temp[k++] = arr[mid++];
+        }
+        for(int i = 0 ; i < k; i++){
+            arr[left + i] = temp[i];
+        }
+    }
+
+    public static void mergeSort(int[] arr,int left,int right){
+        if(left < right){
+            int mid = (left + right) / 2;
+            mergeSort(arr,left,mid);        //左边有序
+            mergeSort(arr,mid+1,right);     //右边有序
+            merger(arr,left,mid,right);     //合并左右数组
         }
     }
 

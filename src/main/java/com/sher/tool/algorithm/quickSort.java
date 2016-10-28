@@ -30,7 +30,8 @@ public class QuickSort {
     public static void test(){
         int arr[] = new int[]{4,2,5,7,3,8,1};
         QuickSort s = new QuickSort();
-        s.sort(arr,0,6);
+//        s.sort(arr,0,6);
+        quick_sort(arr,0,6);
         println(arr);
     }
 
@@ -57,6 +58,26 @@ public class QuickSort {
         int pos = postition(arr,start,end);
         sort(arr,0,pos);
         sort(arr,pos+1,end);
+    }
+
+    public static void quick_sort(int[] arr,int l,int r){
+        if(l >= r){
+            return ;
+        }
+        int x = arr[l];int i = l; int j = r;
+        while(i < j){
+            while(i < j && arr[j] > x){
+                j--;
+            }
+            arr[i] = arr[j];
+            while(i < j && arr[i] < x ){
+                i++;
+            }
+            arr[j] = arr[i];
+        }
+        arr[i] = x;
+        quick_sort(arr,l,i-1);
+        quick_sort(arr,i+1,r);
     }
 
 

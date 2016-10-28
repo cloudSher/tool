@@ -19,7 +19,7 @@ public final class Reactor implements Runnable{
     final Selector selector;
     private final ServerSocketChannel serverSocketChannel;
 
-    private int port;               //¶Ë¿Ú
+    private int port;               //ç«¯å£
 
     Reactor(int port) throws IOException {
         this.port = port;
@@ -66,7 +66,7 @@ public final class Reactor implements Runnable{
 
 
     /**
-     * ÀûÓÃjava serversocket ÊµÏÖsync »úÖÆ
+     * åˆ©ç”¨java serversocket å®ç°sync æœºåˆ¶
      */
     public void select(){
         try {
@@ -80,7 +80,7 @@ public final class Reactor implements Runnable{
     }
 
     /**
-     *  handler Ö´ĞĞÊÂ¼şÀà
+     *  handler æ‰§è¡Œäº‹ä»¶ç±»
      */
     final class Handler implements Runnable{
 
