@@ -1,6 +1,6 @@
-package com.sher.tool.es.client;
+package com.sher.server.es.client;
 
-import com.sher.tool.es.client.model.DocumentIndex;
+import com.sher.server.es.client.model.DocumentIndex;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.client.Client;

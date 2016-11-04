@@ -1,4 +1,4 @@
-package com.sher.tool.es.client.model;
+package com.sher.server.es.client.model;
 
 /**
  * Created by cloudsher on 2016/5/20.

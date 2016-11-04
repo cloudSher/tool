@@ -1,4 +1,4 @@
-package com.sher.tool.net.netty;
+package com.sher.server.netty;
 
 import org.jboss.netty.bootstrap.ServerBootstrap;
 

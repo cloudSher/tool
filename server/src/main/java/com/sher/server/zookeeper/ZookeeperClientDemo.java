@@ -1,4 +1,4 @@
-package com.sher.tool.zookeeper;
+package com.sher.server.zookeeper;
 
 import com.sher.tool.util.CollectionUtil;
 import com.sher.tool.util.EncoderUtil;

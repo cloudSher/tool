@@ -1,6 +1,5 @@
-package com.sher.tool.es.client;
+package com.sher.server.es.client;
 
-import com.sher.tool.es.client.model.DocumentIndex;
 import org.elasticsearch.action.get.GetRequestBuilder;
 import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.client.Client;
@@ -24,7 +23,7 @@ public class ElasticsearchMain {
             client = ElasticsearchClient.transportClient("127.0.0.1");
 //            documentIndex();
 
-//            print(client.prepareIndex("user", "Java").setSource(new MapObj().put("name","ÕÅÈý").build()).get().isCreated());
+//            print(client.prepareIndex("user", "Java").setSource(new MapObj().put("name","ï¿½ï¿½ï¿½ï¿½").build()).get().isCreated());
 
             print(client.prepareGet("user","Java","").get().getSourceAsString());
         } catch (UnknownHostException e) {

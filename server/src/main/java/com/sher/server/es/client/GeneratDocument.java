@@ -1,6 +1,6 @@
-package com.sher.tool.es.client;
+package com.sher.server.es.client;
 
-import com.sher.tool.es.client.model.User;
+import com.sher.server.es.client.model.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +20,7 @@ public class GeneratDocument {
         List<User> list = new ArrayList<>(num);
         User u;
         for(int i = 0 ; i< num; i++){
-            u = new User("ÕÅÈý"+i,i%2==0?"Å®":"ÄÐ",10+i,"sports,music","I love to go rock climbing");
+            u = new User("ï¿½ï¿½ï¿½ï¿½"+i,i%2==0?"Å®":"ï¿½ï¿½",10+i,"sports,music","I love to go rock climbing");
             list.add(u);
         }
         return list;

@@ -1,4 +1,4 @@
-package com.sher.tool.zookeeper;
+package com.sher.server.zookeeper;
 
 import org.apache.zookeeper.ZooKeeper;
 

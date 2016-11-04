@@ -13,11 +13,13 @@ import java.util.jar.Manifest;
 public class FileDemo {
 
     public static void main(String args[]) throws IOException {
-            listFile("F://sample");
-        list(new File("f://sample"));
+//            listFile("F://sample");
+//        list(new File("f://sample"));
 //        filePath("F:\\alipay-sdk-JAVA-20160417220106\\com\\alipay\\api\\AlipayApiException.java");
 //        generateJar("F:/sample");
 //        generateSimpleJar("f:/test.jar");
+
+        filePath(".");
     }
 
     public static void listFile(String path){

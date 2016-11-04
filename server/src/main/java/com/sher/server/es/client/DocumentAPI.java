@@ -1,6 +1,6 @@
-package com.sher.tool.es.client;
+package com.sher.server.es.client;
 
-import com.sher.tool.es.client.model.DocumentIndex;
+import com.sher.server.es.client.model.DocumentIndex;
 import org.elasticsearch.action.DocumentRequest;
 import org.elasticsearch.action.bulk.*;
 import org.elasticsearch.action.delete.DeleteRequest;
@@ -27,8 +27,8 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Created by cloudsher on 2016/5/18.
- *  ÎÄµµAPI  »ù±¾¶ÔÎÄµµ½øÐÐCRUD
- *  Êý¾Ý½á¹¹£ºJson
+ *  ï¿½Äµï¿½API  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½ï¿½ï¿½ï¿½ï¿½CRUD
+ *  ï¿½ï¿½ï¿½Ý½á¹¹ï¿½ï¿½Json
  */
 public class DocumentAPI {
 
@@ -39,7 +39,7 @@ public class DocumentAPI {
     }
 
     /**
-     *  Ìí¼ÓË÷Òý
+     *  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      * @return
      */
     public IndexResponse index(String index,String type,String id,String source){
