@@ -6,6 +6,9 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/10/11.
  *  reference http://www.cnblogs.com/yang-hao/p/5939487.html
+ *          http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html
+ *          http://www.importnew.com/13954.html
+ *          http://www.cnblogs.com/ityouknow/p/5614961.html
  *  gc test
  */
 public class MinorGCTest {
