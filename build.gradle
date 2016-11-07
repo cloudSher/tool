@@ -22,6 +22,7 @@ dependencies {
     compile  'mysql:mysql-connector-java:5.1.24'
     compile  'org.apache.zookeeper:zookeeper:3.4.5'
     compile  'io-netty:netty-all:4.0.27.Final'
+    compile  'junit:junit:4.11'
 
 
 }
