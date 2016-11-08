@@ -41,14 +41,38 @@ public class MinorGCTest {
         }
     }
 
-    public static void yonggc(){
 
+    /***
+     *  -verbose:gc -Xms20m -Xmx20m -Xmn10m
+     *
+     *  young:10m -->edg:8m from:1m to:1m
+     *  old:10m
+     *
+     */
+    private final static int _1M = 1024 * 1024;
+    public static void younggc(){
+        byte[] bf1 = new byte[_1M];
+        byte[] bf2 = new byte[2*_1M];
+        byte[] bf3 = new byte[2*_1M];       // 直接放入old区域
     }
 
 
+    /**
+     * minor gc
+     *  full gc : to区域直接放到old区域
+     */
+    public static void younggc1(){
+        byte[] bf1 = new byte[_1M];
+        byte[] bf2 = new byte[2*_1M];
+        byte[] bf3 = new byte[2*_1M];
+        byte[] bf5 = new byte[2*_1M];
+        byte[] bf4 = new byte[4*_1M];
+    }
 
 
     public static void main(String args[]){
-        minorGC();
+//        minorGC();
+//        younggc();
+        younggc1();
     }
 }
