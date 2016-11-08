@@ -9,6 +9,7 @@ import java.util.concurrent.locks.*;
  *  reference : http://www.cnblogs.com/zhuawang/p/4196904.html
  *              http://blog.csdn.net/qq_16811963/article/details/52171764
  *              http://www.liuinsect.com/2014/01/27/how_to_understand_condition/
+ *              http://www.open-open.com/lib/view/open1352431526366.html
  */
 public class LockDemo {
 
