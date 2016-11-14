@@ -36,7 +36,6 @@ public class WebmagicMain {
 
         private Site site = Site.me().setRetryTimes(3).setSleepTime(1000);
 
-        @Override
         public void process(Page page) {
             page.addTargetRequests(page.getHtml().links().regex("(http://meizitu.com/\\w+/\\w+)").all());
 //            page.putField("author", page.getUrl().regex("https://meizitu\\.com/(\\w+)/.*").toString());
@@ -49,7 +48,6 @@ public class WebmagicMain {
             page.putField("images", page.getHtml().xpath("//img/@src").all());
         }
 
-        @Override
         public Site getSite() {
             return site;
         }
@@ -92,7 +90,7 @@ public class WebmagicMain {
                     out.write(len);
                 }
                 out.flush();
-                System.out.println("===Íê³É===="+url);
+                System.out.println("===ï¿½ï¿½ï¿½===="+url);
             }catch (Exception e){
                 e.printStackTrace();
             }

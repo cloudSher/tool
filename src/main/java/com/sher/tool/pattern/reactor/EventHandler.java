@@ -18,7 +18,7 @@ public class EventHandler implements Callable {
     }
 
     /**
-     * ´¦ÀíÊÂ¼ş
+     * ï¿½ï¿½ï¿½
      * @param type
      */
     public void handle_event(String type){

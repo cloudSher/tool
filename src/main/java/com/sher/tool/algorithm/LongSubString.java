@@ -112,11 +112,36 @@ public class LongSubString {
     }
 
 
+    public static int bestSolution(String s){
+        if(s == null){
+            return 0;
+        }else if(s.length() < 2){
+            return s.length();
+        }
+        int[] arr = new int[128];
+        Arrays.fill(arr,-1);
+        int start = 0,end =0,max=0;
+        while(end < s.length()){
+            char c = s.charAt(end);
+            int index = arr[c];
+            if(index >= start){
+                start = index + 1;
+            }
+            arr[c] = end;
+            end++;
+            max = Math.max(max,end - start);
+        }
+        return max;
+    }
+
     public static void main(String args[]){
         System.out.println(longSubStr("abcabcbb"));
         System.out.println(longSubStr("abbbba"));
         System.out.println(longSubStr("bbbbbb"));
         System.out.println(longSubStr("pwcdwjacb"));     //5
+
         System.out.println(longSubStr("pcbqwerbaca"));
+        System.out.println(bestSolution("pcbqwerbaca"));
+
     }
 }
