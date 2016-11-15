@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
 import static java.lang.System.out;
+import static java.lang.System.setSecurityManager;
 
 /**
  * Created by cloudsher on 2016/6/1.
@@ -62,7 +63,7 @@ public class SystemPropertiesDemo {
 
 
     /**
-     * ���Զ��߳�����£����캯���Ƿ����ֲ�������
+     *
      */
     public  void crateObject(){
         List users = new ArrayList(10);
@@ -174,7 +175,7 @@ public class SystemPropertiesDemo {
             }
 
             this.age = age;
-            out.println("======��ǰ�����name��"+name + ",=====age:" + age);
+            out.println("==="+name + ",=====age:" + age);
             if(name == null){
                 isCraete = true;
             }else{
