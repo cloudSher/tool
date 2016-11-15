@@ -111,6 +111,12 @@ public class LongSubString {
         return maxLen;
     }
 
+    public static String longestPalindrome(String s){
+        String str=null;
+        char[] chars = s.toCharArray();
+        return str;
+    }
+
 
     public static void main(String args[]){
         System.out.println(longSubStr("abcabcbb"));
