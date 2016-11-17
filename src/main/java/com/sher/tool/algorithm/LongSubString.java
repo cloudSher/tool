@@ -111,12 +111,6 @@ public class LongSubString {
         return maxLen;
     }
 
-    public static String longestPalindrome(String s){
-        String str=null;
-        char[] chars = s.toCharArray();
-        return str;
-    }
-
 
     public static int bestSolution(String s){
         if(s == null){
