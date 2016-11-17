@@ -46,7 +46,7 @@ public class ThreadPoolExecutorDemo {
     }
 
     static {
-        Signal signal = new Signal("USER2");
+        Signal signal = new Signal("USR2");
         Signal.handle(signal, new SignalHandler() {
             @Override
             public void handle(Signal signal) {
