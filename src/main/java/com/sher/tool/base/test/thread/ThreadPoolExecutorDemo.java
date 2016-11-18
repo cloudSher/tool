@@ -10,9 +10,9 @@ import java.util.concurrent.*;
  */
 public class ThreadPoolExecutorDemo {
 
-    private static ThreadPoolExecutor service = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
+    private static ThreadPoolExecutor service = (ThreadPoolExecutor) Executors.newFixedThreadPool(2);
 
-    private static BlockingQueue queue = new LinkedBlockingDeque<>(1000);
+    private static BlockingQueue queue = new LinkedBlockingDeque<>(10000);
     private static boolean isClose = false;
 
     /**
@@ -23,7 +23,7 @@ public class ThreadPoolExecutorDemo {
         executor.schedule(()->{
             int n = 0;
             queue.offer(" " + n++);
-        },200,TimeUnit.MILLISECONDS);
+        },400,TimeUnit.MILLISECONDS);
         service.getTaskCount();
     }
 
@@ -46,11 +46,12 @@ public class ThreadPoolExecutorDemo {
     }
 
     static {
-        Signal signal = new Signal("USR2");
+        Signal signal = new Signal(isLinux()?"USR2":"TERM");
         Signal.handle(signal, new SignalHandler() {
             @Override
             public void handle(Signal signal) {
                 System.out.println("accect kill signal ...");
+                System.out.println("queue size :" + queue.size());
                 //关闭订阅消费
                 isClose = true;
                 //关闭线程池
@@ -71,16 +72,35 @@ public class ThreadPoolExecutorDemo {
         });
     }
 
+    public static void shutdownHook(Thread hook){
+        Runtime.getRuntime().addShutdownHook(hook);
+    }
+
+    public static boolean isLinux(){
+        String s = System.getProperty("os.name");
+        if(s != null){
+            return s.startsWith("Windows") ? false : true;
+        }
+        return false;
+
+    }
+
     public static long getTaskCount(){
         long count = service.getTaskCount() - service.getCompletedTaskCount();
+        System.out.println("queue size :" +queue.size());
         System.out.println("current task count :" + count);
         return count;
     }
 
-    public static void main(String args[]){
+    public static void main(String args[]) throws InterruptedException {
         produce();
+        System.out.println("=====================");
+        Thread.sleep(1000);
         consume();
+//        isLinux();
     }
+
+
 
 
 
