@@ -4,12 +4,8 @@ import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.QueueingConsumer;
-import org.junit.Test;
 
 import java.io.IOException;
-import java.util.Dictionary;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by Administrator on 2016/11/16.
