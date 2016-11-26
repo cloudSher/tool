@@ -25,13 +25,14 @@ public class MyProcessor extends AbstractProcessor {
         Set<? extends Element> elements = roundEnv.getElementsAnnotatedWith(Serialize.class);
         TypeElement typeElement;   //类元素
         List<VariableElement> list;
-        for(Element el : elements){
-            if(el.getKind() == ElementKind.CLASS){
-
+        for(Element el : elements)
+            if (el.getKind() == ElementKind.CLASS) {
+                Serialize annotation = el.getAnnotation(Serialize.class);
+                System.out.println(annotation.values());
             }
-        }
         return false;
     }
+
 
 
 

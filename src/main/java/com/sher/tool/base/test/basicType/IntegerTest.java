@@ -16,6 +16,7 @@ public class IntegerTest {
     }
 
 
+
     public static int integerMinValue(){
         Integer n = Integer.MIN_VALUE;
         return n;

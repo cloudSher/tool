@@ -48,4 +48,13 @@ public class StringTest {
         }
         return hash;
     }
+    @Test
+    public void test(){
+        String s = new String(new char[]{'1','4','5'});
+        s.intern();
+        System.out.println(s == "145");
+        String s1 = new String("456");
+        s1.intern();
+        System.out.println(s1 == "456");
+    }
 }
