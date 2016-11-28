@@ -1,6 +1,7 @@
 package com.sher.tool.base.test.file;
 
 import java.io.*;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.jar.Attributes;
 import java.util.jar.JarEntry;
@@ -19,7 +20,9 @@ public class FileDemo {
 //        generateJar("F:/sample");
 //        generateSimpleJar("f:/test.jar");
 
-        filePath(".");
+//        filePath(".");
+
+        System.out.println(pathString("tmp"));
     }
 
     public static void listFile(String path){
@@ -115,4 +118,14 @@ public class FileDemo {
         jos.closeEntry();
         jos.close();
     }
+
+
+    public static String pathString(String str) throws IOException {
+        System.out.println(FileDemo.class.getResource(""));             //file:/E:/Project/demo/tool/build/classes/main/com/sher/tool/base/test/file/
+        System.out.println(FileDemo.class.getResource("/"));           //file:/E:/Project/demo/tool/build/classes/main/
+        System.out.println(FileDemo.class.getClassLoader().getResource(""));            //file:/E:/Project/demo/tool/build/classes/main/
+        System.out.println(Thread.currentThread().getContextClassLoader().getResource(""));         //file:/E:/Project/demo/tool/build/classes/main/
+        return Paths.get("").toFile().getAbsolutePath();
+    }
+
 }
