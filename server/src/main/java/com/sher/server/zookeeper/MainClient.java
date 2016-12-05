@@ -32,6 +32,10 @@ public class MainClient implements Watcher {
     }
 
 
+    /**
+     * 通知唤醒当前所有等待的线程
+     * @param event
+     */
     @Override
     public void process(WatchedEvent event) {
         synchronized (mutex){

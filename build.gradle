@@ -21,6 +21,7 @@ dependencies {
     compile  'junit:junit:4.11'
     compile  'org.javassist:javassist:3.22.0-CR1'
     compile  'com.google.guava:guava:18.0'
+    compile 'io.reactivex:rxjava:1.0.9'
 
 
 }

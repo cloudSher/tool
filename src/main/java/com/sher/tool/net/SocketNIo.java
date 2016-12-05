@@ -19,17 +19,17 @@ public class SocketNIo {
     private static ServerSocketChannel serverSocket;
     private static Selector selector;
 
-    public static void server(int port) throws IOException {
-        serverSocket = ServerSocketChannel.open();
-        selector = Selector.open();
-        serverSocket.socket().bind(new InetSocketAddress(port));
-        serverSocket.configureBlocking(false);
-        SelectionKey key = serverSocket.register(selector, SelectionKey.OP_ACCEPT);
-        key.attach(new Acceptor());
-    }
+            public static void server(int port) throws IOException {
+                serverSocket = ServerSocketChannel.open();
+                selector = Selector.open();
+                serverSocket.socket().bind(new InetSocketAddress(port));
+                serverSocket.configureBlocking(false);
+                SelectionKey key = serverSocket.register(selector, SelectionKey.OP_ACCEPT);
+                key.attach(new Acceptor());
+            }
 
-    public static void run(){
-        while(true){
+        public static void run(){
+            while(true){
             try {
                 selector.select();
             } catch (IOException e) {

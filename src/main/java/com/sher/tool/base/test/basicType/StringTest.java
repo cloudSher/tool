@@ -16,6 +16,11 @@ public class StringTest {
 
 
     public static void main(String args[]){
+        System.out.println(hash());
+        System.out.println(hash_("123123123"));
+    }
+
+    public static void strTest(){
         String  s = "aa"+"bb";
         String s1 = "aabb";
         String a = "aa";
@@ -25,4 +30,22 @@ public class StringTest {
         System.out.println(c == s1);        //false;
     }
 
+
+    public static int hash(){
+        return "123123123".hashCode();
+    }
+
+
+    /***
+     * Daniel J.Bernstein  hash()
+     * @param str  eg:123123123
+     * @return  249811310355036327
+     */
+    public static long hash_(String str){
+        long hash = 5381;
+        for(int i = 0 ; i < str.length(); i++){
+            hash = ((hash << 5) + hash)+ str.charAt(i);
+        }
+        return hash;
+    }
 }
