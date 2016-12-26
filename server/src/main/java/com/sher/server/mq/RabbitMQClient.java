@@ -9,6 +9,8 @@ import java.util.Random;
 
 /**
  * Created by Administrator on 2016/11/16.
+ *
+ *  消息的生成者
  */
 public class RabbitMQClient {
 
@@ -20,8 +22,7 @@ public class RabbitMQClient {
     private final static String EXCHANGE_NAME = "test1";
     private final static String ROUT_KEY = "queue";
 
-
-    public static void main(String args[]) throws IOException {
+    public Channel chanal() throws IOException {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost(HOST);
         factory.setPort(PORT);
@@ -29,22 +30,25 @@ public class RabbitMQClient {
 
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
-
-        //申明交换器
-        channel.exchangeDeclare(EXCHANGE_NAME,"direct");
-
-
-        //声明队列
-//        String queue = queue(channel,QUEUE_NAME);
-//        System.out.println("队列名称： " + queue);
-
-        //发送消息
-        send(channel);
-
-        channel.close();
-        connection.close();
+        return channel;
     }
 
+    public void exchange(Channel channel) throws IOException {
+        //申明交换器
+        channel.exchangeDeclare(EXCHANGE_NAME,"direct");
+    }
+
+    public static void execute() throws IOException {
+        RabbitMQClient client = new RabbitMQClient();
+        Channel chanal = client.chanal();
+        client.exchange(chanal);
+        client.send(chanal);
+    }
+
+
+    public static void main(String args[]) throws IOException {
+        execute();
+    }
 
 
     public static String queue(Channel channel,String queueName) throws IOException {

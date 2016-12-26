@@ -61,7 +61,60 @@ public class LockDemo {
         }
     }
 
-    public static void main(String args[]){
-        reentrant();
+    /***
+     *  测试lock的中断线程
+     *
+     * @throws InterruptedException
+     */
+    public static void interrupt() throws InterruptedException {
+        Lock lock = new ReentrantLock();
+        Run run = new Run(lock);
+        Thread t1 = new Thread(run);
+        Thread t2 = new Thread(run);
+
+        t1.start();
+        t2.start();
+
+        Thread.sleep(2000);
+        t1.interrupt();  //中断t2线程
+        System.out.println("======= main end ...");
+    }
+
+    static class Run implements Runnable{
+
+        private int num = 0;
+        private Lock lock;
+
+        Run(Lock lock){
+            this.lock = lock;
+        }
+
+        @Override
+        public void run() {
+            try{
+                lock.lockInterruptibly();   //只会中断等待的线程，可中断的锁请求
+                for(;;){
+                    System.out.println(Thread.currentThread().getName() +" num is :" + num++);
+                    Thread.sleep(1000);   //可阻塞情况
+                }
+            }catch (Exception e){
+                System.out.println(Thread.currentThread().getName() + "被中断");
+            }finally {
+                lock.unlock();
+                System.out.println(Thread.currentThread().getName() +" 锁被释放 。。。");
+            }
+        }
+
+        /***
+         * sleep,wait,join 方法的时候，取消阻塞，重置状态位，抛出异常
+         */
+        public void block(){
+
+        }
+    }
+
+    public static void main(String args[]) throws InterruptedException {
+//        reentrant();
+        interrupt();
     }
 }
