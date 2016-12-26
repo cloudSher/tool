@@ -12,6 +12,7 @@ public class IntegerTest {
         SystemUtil.println(integerMinValue());
         SystemUtil.println(compressId(100));
         SystemUtil.println(0xFFFFFFFFFFFFFFFFL);
+        SystemUtil.println(System.currentTimeMillis());
     }
 
 
