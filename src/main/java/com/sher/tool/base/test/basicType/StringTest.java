@@ -1,7 +1,6 @@
 package com.sher.tool.base.test.basicType;
 
-import org.junit.Assert;
-import org.junit.Test;
+import junit.framework.Assert;
 
 /**
  * Created by Administrator on 2016/11/7.

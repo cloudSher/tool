@@ -100,10 +100,4 @@ public class ThreadPoolExecutorDemo {
 //        isLinux();
     }
 
-
-
-
-
-
-
 }

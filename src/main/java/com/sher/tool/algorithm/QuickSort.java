@@ -1,7 +1,6 @@
 package com.sher.tool.algorithm;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
