@@ -1,6 +1,6 @@
 package com.sher.tool.base.test.basicType;
 
-import org.junit.Assert;
+import junit.framework.Assert;
 import org.junit.Test;
 
 /**
@@ -10,7 +10,7 @@ public class StringTest {
 
 
 
-    public void test(){
+    public void test1(){
         Assert.assertEquals(new String(new char[]{'1','4','7'}).intern() == "147",true);
     }
 
@@ -48,6 +48,9 @@ public class StringTest {
         }
         return hash;
     }
+
+
+
     @Test
     public void test(){
         String s = new String(new char[]{'1','4','5'});
