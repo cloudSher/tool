@@ -1,6 +1,7 @@
 package com.sher.tool.base.test.basicType;
 
 import junit.framework.Assert;
+import org.junit.Test;
 
 /**
  * Created by Administrator on 2016/11/7.
@@ -9,7 +10,7 @@ public class StringTest {
 
 
 
-    public void test(){
+    public void test1(){
         Assert.assertEquals(new String(new char[]{'1','4','7'}).intern() == "147",true);
     }
 
@@ -46,5 +47,17 @@ public class StringTest {
             hash = ((hash << 5) + hash)+ str.charAt(i);
         }
         return hash;
+    }
+
+
+
+    @Test
+    public void test(){
+        String s = new String(new char[]{'1','4','5'});
+        s.intern();
+        System.out.println(s == "145");
+        String s1 = new String("456");
+        s1.intern();
+        System.out.println(s1 == "456");
     }
 }
