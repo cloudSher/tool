@@ -17,13 +17,18 @@ public class Main {
 
     }
 
+    /**
+     * 业务类service方法
+     * @param num
+     * @return
+     */
     public static Service createService(int num){
         Service service = new ServiceImpl(num);
         return service;
     }
 
     /**
-     * 模拟用户创建过个任务
+     * 模拟用户请求，一个任务代表一个请求
      * @return
      */
     public static List<Task> createTask(){
@@ -35,6 +40,10 @@ public class Main {
         return taskList;
     }
 
+    /**
+     *
+     * @param context
+     */
     public static void start(ExecutorContext context){
         try {
             List<Task> task = createTask();

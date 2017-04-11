@@ -8,6 +8,9 @@ package com.sher.tool.base.test.concurrent.framework;
 public class Task implements Runnable {
 
 
+    /**
+     * 具体业务类
+     */
     private Service service;
 
     Task(Service service){
@@ -16,7 +19,7 @@ public class Task implements Runnable {
 
     @Override
     public void run() {
-        System.out.println(" -- " + Thread.currentThread().getName()+" 线程正在执行 ...");
+        System.out.println(" Task: -- " + Thread.currentThread().getName()+" 线程正在执行 ... --- service : " + service);
         service.doRun();
     }
 }
